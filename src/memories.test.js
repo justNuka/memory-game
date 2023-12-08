@@ -1,6 +1,9 @@
+const { shuffle } = require("./memories.js");
 
-describe('Pagination Unit Test Suites', () => {
+describe('good init ', () => {
+    const cards = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+
     it('should return something', () => (
-        expect(1).toEqual(1)
+        expect(shuffle(cards)).not.toEqual(1)
     ))
 })
