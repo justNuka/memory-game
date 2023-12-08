@@ -1,0 +1,13 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.memory-card {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background-color: #eee;
+    display: inline-block;
+    cursor: pointer;
+}
