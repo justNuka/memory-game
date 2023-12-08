@@ -59,7 +59,19 @@ const cards = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'A', 'B', 'C', 'D', 'E', 
       flippedCards = [];
 
       if (matchedCards.length === cards.length) {
-        alert('Félicitations, vous avez gagné !');
+        Swal.fire({
+            title: 'Bien joué, vous avez gagné !',
+            icon: 'success',
+            confirmButtonText: 'Rejouer une partie',
+            showDenybutton: true,
+            denyButtonText: 'Retourner à l\'accueil',
+            allowOutsideClick: false,
+            allowEscapeKey: false,
+            }).then((result) => {
+            if (result.isConfirmed) {
+                location.reload();
+            }
+        })
       }
     } else {
       flippedCards.forEach(card => card.classList.remove('flipped'));
@@ -76,5 +88,3 @@ const cards = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'A', 'B', 'C', 'D', 'E', 
       gameContainer.appendChild(card);
     });
   }
-
-  initGame();
