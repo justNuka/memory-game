@@ -4,18 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="memories.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.min.css">
   <title>Jeu de Mémoire</title>
-  <style>
-    
-  </style>
 </head>
 <body>
 
+    <script>
+        swal.fire({
+            title: 'Bienvenue sur le jeu de mémoire !',
+            text: 'Cliquez sur une carte pour commencer',
+            icon: 'info',
+            confirmButtonText: 'OK'
+        })
+    </script>
+
 <div id="memory-game"></div>
 
-<script src="memories.js">
-  
-</script>
+<script src="memories.js"></script>
+
 
 </body>
 </html>

@@ -18,8 +18,23 @@ const cards = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'A', 'B', 'C', 'D', 'E', 
   function createCard(cardValue) {
     const card = document.createElement('div');
     card.classList.add('card');
-    card.textContent = cardValue;
     card.addEventListener('click', () => flipCard(card));
+
+    const cardInner = document.createElement('div');
+    cardInner.classList.add('card-inner');
+
+    const frontFace = document.createElement('div');
+    frontFace.classList.add('face');
+    frontFace.textContent = '?';
+
+    const backFace = document.createElement('div');
+    backFace.classList.add('face', 'back');
+    backFace.textContent = cardValue;
+
+    cardInner.appendChild(frontFace);
+    cardInner.appendChild(backFace);
+    card.appendChild(cardInner);
+
     return card;
   }
 
@@ -36,8 +51,8 @@ const cards = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'A', 'B', 'C', 'D', 'E', 
 
   function checkMatch() {
     const [card1, card2] = flippedCards;
-    const value1 = card1.textContent;
-    const value2 = card2.textContent;
+    const value1 = card1.querySelector('.back').textContent;
+    const value2 = card2.querySelector('.back').textContent;
 
     if (value1 === value2) {
       matchedCards.push(card1, card2);
