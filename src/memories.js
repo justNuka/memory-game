@@ -86,7 +86,7 @@ function checkMatch() {
   }
 }
 
-function initGame() {
+export const initGame = ()  =>  {
   const shuffledCards = shuffle(cards);
   const gameContainer = document.getElementById('memory-game');
 
@@ -95,3 +95,4 @@ function initGame() {
     gameContainer.appendChild(card);
   });
 }
+
